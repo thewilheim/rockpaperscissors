@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <!-- 
+
+        Create a function that randomly selects either 'Rock','Paper' or 'Scissors'
+        Create a function that takes the players and comupters parameters and returns a
+        string that declares the winner of the round.
+
+    -->
+
+    <script>
+
+        let arr = ['Rock','Paper','Scissors'];
+        let playerSelection = window.prompt('Rock, Paper or Scissors?').toLowerCase();
+        
+        function computerPlay() {
+
+             let computerSeletion = arr[Math.floor(Math.random() * arr.length)];
+                computerSeletion = computerSeletion.toLowerCase();
+             return computerSeletion
+        }
+
+        function play(player, ai) {
+            if ((player === 'rock' && ai === 'scissors') || (player === 'paper' && ai === 'rock') || (player === 'scissors' && ai === 'paper')) {
+                return 'You Win!' + '' + player + ' ' + 'Beats' + ' ' + ai;
+            } else if ((ai === 'rock' && player === 'scissors') || (ai  === 'paper' && player === 'rock') || (ai === 'scissors' && player === 'paper')) {
+                return 'You lose!' + ' ' + ai + ' ' + 'Beats' + ' ' + player;
+            } else if (player === ai) {
+                return 'Its a tie!'
+            }
+        }
+
+        let computerSeletion = computerPlay();
+
+        console.log(playerSelection);
+        console.log(play(playerSelection,computerSeletion));
+
+    </script>
+
+</html>
