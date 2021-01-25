@@ -1,1 +1,1 @@
-# rockpaperscissors
+Simple console rock papers scissors game
