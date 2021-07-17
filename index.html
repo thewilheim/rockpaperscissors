@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script async src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="result">
+            <p class="playerScore">Player Score: 0 </p>
+            <p class="aiScore">AI Score: 0 </p>
+            <p class="score">Select a choice to start!</p>
+        </div>
+        <div class="option">
 
-    <head>
-        <title>Rock Paper Scissors</title>
-    </head>
+            <button class="input" id="rock">Rock</button>
 
-    <!-- 
+            <button class="input" id="paper">Paper</button>
 
-        Create a function that randomly selects either 'Rock','Paper' or 'Scissors'
-        Create a function that takes the players and comupters parameters and returns a
-        string that declares the winner of the round.
+            <button class="input" id="scissors">Scissors</button>
 
-    -->
+        </div>
 
-    <script>
+        <div>
 
-        let arr = ['Rock','Paper','Scissors'];
-        let playerSelection = window.prompt('Rock, Paper or Scissors?').toLowerCase();
-        
-        function computerPlay() {
+            <button class="reset">Try Again!</button>
 
-             let computerSeletion = arr[Math.floor(Math.random() * arr.length)];
-                computerSeletion = computerSeletion.toLowerCase();
-             return computerSeletion
-        }
+        </div>
 
-        function play(player, ai) {
-            if ((player === 'rock' && ai === 'scissors') || (player === 'paper' && ai === 'rock') || (player === 'scissors' && ai === 'paper')) {
-                return 'You Win!' + '' + player + ' ' + 'Beats' + ' ' + ai;
-            } else if ((ai === 'rock' && player === 'scissors') || (ai  === 'paper' && player === 'rock') || (ai === 'scissors' && player === 'paper')) {
-                return 'You lose!' + ' ' + ai + ' ' + 'Beats' + ' ' + player;
-            } else if (player === ai) {
-                return 'Its a tie!'
-            }
-        }
-
-        let computerSeletion = computerPlay();
-
-        console.log(playerSelection);
-        console.log(play(playerSelection,computerSeletion));
-
-    </script>
-
+    </div>
+</body>
 </html>
